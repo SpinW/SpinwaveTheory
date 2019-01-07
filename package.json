@@ -1,0 +1,12 @@
+{
+  "name": "Intro2SpinW_Presentation",
+  "version": "1.0.0",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "mathjax": "latest",
+    "svg.js": "latest",
+    "@iconfu/svg-inject": "latest"
+  }
+}

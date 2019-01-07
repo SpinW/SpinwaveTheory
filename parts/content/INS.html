@@ -1,0 +1,33 @@
+<section class="subsection color--radiant" id="INShead">
+    <div class="grid-wrapper">
+        <div class="logo"></div>
+        <h1>Inelastic neutron scattering</h1>
+        <div class="description">
+            It's all about the interactions.
+        </div>
+    </div>
+</section>
+<section class="blank" id="INS">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Inelastic neutron scattering</div>
+        </div>
+        <content>
+            <h3>Magnetic scattering</h3>
+            <ul><li>General neutron cross section on the Bravais lattice:</li></ul>
+            <br>$$
+            \frac{d^2\sigma}{d\Omega dE} = C \cdot F^2(\mathbf{K}) \sum_{\alpha , \beta}(\delta_{\alpha , \beta} - \hat{k}_\alpha\hat{k}_\beta ) (gSg^T)^{\alpha , \beta} (\mathbf{k}, \omega)
+            $$
+            <ul><li>Dynamic spin correlation function:</li></ul>
+            <br>$$
+            S^{\alpha \beta}(\mathbf{k},\omega) = \frac{1}{2\pi\hbar}\int dt e^{-i \omega t} \left< S^\alpha (\mathbf{k}, 0) S^\beta (-\mathbf{k}, t) \right>
+            $$
+            <ul><li>General neutron cross section on a non-Bravais lattice:</li></ul>
+            <br>$$\begin{align}
+            \frac{d^2\sigma}{d\Omega dE} = & C \sum_{\alpha , \beta} \left( \delta_{\alpha , \beta} - \hat{k}_\alpha\hat{k}_\beta  \right) \int dt e^{-i\omega t} \\
+            & \sum_{i,j} e^{i \mathbf{k}(\mathbf{r}_i - \mathbf{r}_j)} \left( g_i \left< \mathbf{S}_i (\mathbf{k}, 0) \mathbf{S}_j^T(-\mathbf{k}, t) \right> g_j \right)^{\alpha \beta} F_i (\mathbf{k}) F_j(\mathbf{k})
+            \end{align}$$
+        </content>
+    </div>
+</section>

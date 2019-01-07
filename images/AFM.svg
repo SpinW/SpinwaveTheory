@@ -1,0 +1,118 @@
+<svg version="1.1"
+     baseProfile="full"
+     viewBox="5 0 80 75" width="100%" height="auto"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <!-- arrowhead marker definition -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="2.5" markerHeight="5"
+            orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="red"/>
+    </marker>
+    <style>
+        .smallLab {font: normal 5px sans-serif;}
+    </style>
+
+    <!--Draw the cells-->
+    <g fill="none" stroke="black" stroke-width="0.5">
+        <path stroke-dasharray="2,2" d="M15 10 l60 0" />
+        <path stroke-dasharray="2,2" d="M15 25 l60 0" />
+        <path stroke-dasharray="2,2" d="M15 40 l60 0" />
+        <path stroke-dasharray="2,2" d="M15 55 l60 0" />
+        <path stroke-dasharray="2,2" d="M15 70 l60 0" />
+
+        <path stroke-dasharray="2,2" d="M15 10 l0 60" />
+        <path stroke-dasharray="2,2" d="M30 10 l0 60" />
+        <path stroke-dasharray="2,2" d="M45 10 l0 60" />
+        <path stroke-dasharray="2,2" d="M60 10 l0 60" />
+        <path stroke-dasharray="2,2" d="M75 10 l0 60" />
+    </g>
+
+
+    <!--Draw the atoms-->
+    <circle cx="15" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25"/>
+    <circle cx="30" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25"/>
+    <circle cx="45" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="75" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <circle cx="15" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="75" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <circle cx="15" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="75" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <circle cx="15" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="75" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <circle cx="15" cy="70" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="70" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="70" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="70" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="75" cy="70" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <!--Draw the arrows vectors-->
+    <polyline points="15,7.5 15,12.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 15 10)"/>
+    <polyline points="30,7.5 30,12.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 30 10)"/>
+    <polyline points="45,7.5 45,12.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 45 10)"/>
+    <polyline points="60,7.5 60,12.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 60 10)"/>
+    <polyline points="75,7.5 75,12.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 75 10)"/>
+
+    <polyline points="15,37.5 15,42.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 15 40)"/>
+    <polyline points="30,37.5 30,42.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 30 40)"/>
+    <polyline points="45,37.5 45,42.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 45 40)"/>
+    <polyline points="60,37.5 60,42.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 60 40)"/>
+    <polyline points="75,37.5 75,42.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 75 40)"/>
+
+    <polyline points="15,67.5 15,72.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 15 70)"/>
+    <polyline points="30,67.5 30,72.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 30 70)"/>
+    <polyline points="45,67.5 45,72.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 45 70)"/>
+    <polyline points="60,67.5 60,72.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 60 70)"/>
+    <polyline points="75,67.5 75,72.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 75 70)"/>
+
+    <polyline points="15,22.5 15,27.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 15 25)"/>
+    <polyline points="30,22.5 30,27.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 30 25)"/>
+    <polyline points="45,22.5 45,27.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 45 25)"/>
+    <polyline points="60,22.5 60,27.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 60 25)"/>
+    <polyline points="75,22.5 75,27.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 75 25)"/>
+
+    <polyline points="15,52.5 15,57.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 15 55)"/>
+    <polyline points="30,52.5 30,57.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 30 55)"/>
+    <polyline points="45,52.5 45,57.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 45 55)"/>
+    <polyline points="60,52.5 60,57.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(45 60 55)"/>
+    <polyline points="75,52.5 75,57.5" fill="none" stroke="red" stroke-width="1"
+              marker-end="url(#arrow)"  transform="rotate(225 75 55)"/>
+</svg>
