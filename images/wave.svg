@@ -1,26 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<svg id="drawing" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
+<svg id="spinwave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
     <script type="text/javascript" xlink:href="../node_modules/svg.js/dist/svg.min.js"></script>
     <script type="text/javascript">
         <![CDATA[
 
         var sx = 10;
-        var sy = 10;
+        var sy = 7.5;
 
-        nx = 5;
+        var r = 20;
+        var fracY = 0.35;
+        var arrowL = 10;
+
+        var delta = 10;
+
         sep = 20;
         rad = 40;
         rea = 1/2;
-        h = 75;
+        h = 65;
 
-        k = 1;
+        var draw = SVG('spinwave');
 
-        var draw = SVG('drawing');
-        draw.line(sx, sx+h+rad*rea, sx + nx*( rad+ sep), sx+h+rad*rea).stroke({ color: '#51A0D5', width: 1 })
-
-        for (let i = 0; i < nx; i++){
-            draw.line(sx+sep/2 + i*(sep+rad)/2, sx+h+rad*rea)
+        function atom(x, y){
+           draw.circle(r).fill('#FF9F33').attr({ cx: x, cy: y }).stroke({ color: '#000000', opacity: 0.6, width: 1})
         }
+
+        function arrowhead(add){
+            add.path('M 0 0 L 10 5 L 0 10 z').fill('red').scale(0.25)
+        }
+
+        function drawArray(offsetY, k, nx, phaseD) {
+
+            <!--This is the interaction line-->
+            draw.line(sx, offsetY+sx+rad*rea, sx + nx*( rad+ sep), offsetY+sx+rad*rea).stroke({ color: '#51A0D5', width: 3 })
+
+            <!--This is the phase, frequency and amplitude of the wave-->
+            var amplitudeY = rad*fracY/2; // wave amplitude
+            var amplitudeX = rad/2; // wave amplitude
+            var rarity = 1; // point spacing
+            var freq = 2*3.14*k; // angular frequency
+            var phase = 3.145*phaseD/180; // phase angle
+
+            for (let i = 0; i < nx; i++){
+                <!--Draw the atom to circle vector-->
+                var vec = draw.line(sx+sep/2+rad/2 + i*(sep+rad),offsetY+sx+rad*rea, sx+sep/2+rad/2 + i*(sep+rad) + Math.sin(freq*(i)+phase) * amplitudeX,offsetY+rad/2+sx+h+rad*rea + Math.cos(freq*(i)+phase) * amplitudeY - arrowL/2).stroke({ color: 'red', width: 5 })
+                vec.marker('end', arrowL, arrowL, arrowhead)
+                <!--Draw the circle and squash-->
+                var c = draw.circle(rad).move(sx+sep/2 + i*(sep+rad), offsetY+sx+h+rad*rea).fill('none').stroke({ color: 'black', width: 2 }).transform({scaleY: fracY});
+                <!--Draw the atom-->
+                atom(sx+sep/2+rad/2 + i*(sep+rad),offsetY+sx+rad*rea);
+                <!--Draw the line to show procession-->
+                draw.line(sx+sep/2+rad/2 + i*(sep+rad), offsetY+sx+h+rad*rea+rad/2,sx+sep/2+rad/2 + i*(sep+rad) + Math.sin(freq*(i)+phase) * amplitudeX,offsetY+ rad/2+sx+h+rad*rea + Math.cos(freq*(i)+phase) * amplitudeY).stroke({ color: 'black', width: 1 })
+                <!--Add index if needed-->
+                if (k > 0){
+                    if (i > nx - 1/k -2 && i < nx -1) {
+                        draw.text('i = ' + (-i-2 + nx).toString()).move(sx+sep/2+r/8 + i*(sep+rad),offsetY+sx+rad*rea - 30).transform({ rotation: 180 }).font({ anchor:   'center' })
+                    }
+                }
+                <!--Add labeling-->
+                if (i == nx-1) {
+                    draw.text('Si').move(sx+sep/2+rad/2 + i*(sep+rad) +delta,offsetY+rad/2+sx+rad*rea).fill('black').transform({ rotation: 180 })
+                    draw.text('dSi').move(sx+sep/2 + i*(sep+rad), offsetY+sx+h+rad*rea+0.75*rad*rea).fill('black').transform({ rotation: 180 }).font({ size:   8 })
+                }
+            }
+            <!--Add k = something-->
+            if (k > 0){
+                draw.text('k = ' + k.toString()).move(sx,offsetY+rad+sx+h+rad*rea).transform({ rotation: 180 }).font({ anchor:   'left' })
+            } else {
+                draw.text('k = 0').move(sx,offsetY+rad+sx+h+rad*rea).transform({ rotation: 180 }).font({ anchor:   'left' })
+            }
+        }
+
+        <!--Draw  the Atom arrays-->
+        var noAtoms = 9;
+        var arrayHeight = 2*(sy*2 + h);
+        var arrayWidth = sx*2+noAtoms*( rad+ sep);
+
+        drawArray(3*arrayHeight, 0, noAtoms, -120)
+        drawArray(2*arrayHeight, 1/2, noAtoms, -120)
+        drawArray(arrayHeight, 0.25, noAtoms, -120)
+        drawArray(0, 0.125, noAtoms, -120)
+
+        <!--Set the viewbox-->
+        var box = draw.viewbox();
+        draw.viewbox(box.x, box.y, arrayWidth, 4*arrayHeight);
     ]]>
     </script>
 </svg>

@@ -1,10 +1,460 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<section class="subsection color--radiant" id="semiCBravishead">
+    <div class="grid-wrapper">
+        <div class="logo"></div>
+        <h1> Semiclassical spin wave theory on Bravais lattices</h1>
+        <div class="description">
+            <i>Here comes the pain</i> - Al Pacino in 'Carlitos Way'
+        </div>
+    </div>
+</section>
 
-</body>
-</html>
+<section class="blank color--radiant present" id="Helical" style="display: block;">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"></div>
+        </div>
+        <div class="content"><h1>The spiral ground state</h1></div>
+    </div>
+</section>
+
+<section class="blank" id="starterHelical">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+           <p>In the previous section we looked at the case of a single Ferromagnetic $J$. But what happens when we have $J_{i,j}$ on a non-trivial lattice?</p>
+            <ul>
+                <li>Frustration from geometrical competing interactions</li>
+                <li>Degenerate ground states</li>
+                <li>Weak interactions (e.g. order by disorder) select state from manifold</li>
+                <br>
+            </ul>
+            <h3>Heisenberg Hamiltonian (Bravais lattice):<br></h3>
+            $$ \mathcal{H} = \sum_{i,j} J_{i,j} \mathbf{S}_i \cdot \mathbf{S}_j$$
+            <p><br>Introduce the fourier transform the spin:<br></p>
+            $$ \mathbf{S}_i = \frac{1}{\sqrt{N}}\sum_k S_k e^{-i \mathbf{k} \cdot \mathbf{r_i}} $$
+            <aside class="notes">
+                We can sum to k.
+            </aside>
+            <p>So.....</p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="helical1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+            <h2><br> Over the first Brillouin zone.<br></h2>
+            $$\begin{align}
+            \mathcal{H} & = -\frac{1}{2N} \sum_{k, \acute{k}} \sum_{i,j} \mathbf{F}_k \cdot \mathbf{F}_\acute{k} J(\mathbf{r}_i - \mathbf{r}_j) e^{i \mathbf{k} \cdot \mathbf{r}_i} e^{i \mathbf{\acute{k}} \cdot \mathbf{r}_j}\\
+            & = -\frac{1}{2N} \sum_{k, \acute{k}} \sum_{d} \mathbf{F}_k \cdot \mathbf{F}_\acute{k} J(\mathbf{d}) \sum_i e^{i (\mathbf{k} + \mathbf{\acute{k}}) \cdot \mathbf{r}_i} e^{i \mathbf{k} \cdot \mathbf{d}}\\
+            \end{align}$$
+            <p>Since $\sum_i e^{i (\mathbf{k} + \mathbf{\acute{k}}) \cdot \mathbf{r}_i} = N \delta_{(k+\acute{k},0)} $</p>
+            $$\begin{align}
+            \mathcal{H} & = -\frac{1}{2} \sum_{k} \mathbf{F}_k \cdot \mathbf{F}_{-k} \sum_{d} e^{-i \mathbf{k} \cdot \mathbf{d}} J(\mathbf{d}) \\
+            & = -\frac{1}{2} \sum_{k} \mathbf{F}_k \cdot \mathbf{F}_{-k} J(\mathbf{k})
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="helical2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+            <p>So $J(k)$ is real and even since $J(\mathbf{d})$ is real and even. Forcing $\mathbf{F}_k$ to respect the normalisation condition of $\mathbf{S}_i$:<br></p>
+            $$ S^2 = \mathbf{S}_i \cdot \mathbf{S}_i = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_\acute{k} e^{i (\mathbf{k} + \mathbf{\acute{k}})\cdot \mathbf{r}_i} = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_{-\acute{k}}0 e^{i (\mathbf{k} - \mathbf{\acute{k}})\cdot \mathbf{r}_i}$$
+            <p>Let $\mathbf{Q}$ be a single wavevector which maximises $J(k)$. Minimising $\mathcal{H}$ to get the ground-state we have 2 cases:</p>
+            <ul>
+                <li>$\mathbf{Q} = 0$: So $\mathbf{S}_i = N^{-\frac{1}{2}} \mathbf{S}_{\mathbf{Q} = 0}$ which gives us homogeneous spin polarisation or a <i>ferromagnet</i> as shown before.</li>
+                <li>$\mathbf{Q} \neq 0$: Our condition is now:<br></li>
+                $$
+                S^2 = \frac{1}{N} \left( 2\mathbf{S}_Q \cdot \mathbf{S}_{-Q} + e^{2 i \mathbf{Q} \cdot \mathbf{r}_i} \mathbf{S}_Q \cdot \mathbf{Q} + e^{-2 i \mathbf{Q} \cdot \mathbf{r}_i} \mathbf{S}_{-Q}\mathbf{S}_{-Q} \right)
+                $$
+            </ul>
+            <p>Since the R.H.S must be independent of $\mathbf{r}_i$ we get:</p>
+            $$ \mathbf{S}_Q \cdot \mathbf{S}_Q = \mathbf{S}_{-Q} \cdot \mathbf{S}_{-Q} $$
+            <p>That looks simple......</p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="helical3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+            <h2>But</h2>
+            <p>remember $\mathbf{S}_Q$ is a Fourier transform</p>
+            $$ \mathbf{S}_Q = \mathbf{u} + i\mathbf{v}$$
+            <p>After some replacement, we find that $\mathbf{u}$ and $\mathbf{v}$ are Orthoganal vectors of equal magnitude. So</p>
+            $$ S^2 = \frac{1}{N} 2 \mathbf{S}_Q \cdot \mathbf{S}_{-Q} = \frac{2}{N} (\mathbf{u}^2 + \mathbf{v}^2)$$
+            <p>Giving:</p>
+            $$ \mathbf{u}^2 = \mathbf{v}^2 = \frac{NS^2}{4}$$
+            <p>And a ground state of:</p>
+            $$\mathcal{H}_0 = -\frac{1}{2} J(\mathbf{Q}) \mathbf{S}_Q \cdot \mathbf{S}_{-Q} -\frac{1}{2} J(\mathbf{-Q}) \mathbf{S}_{-Q} \cdot \mathbf{S}_{Q} = -J(\mathbf{Q})\frac{NS^2}{2}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="helical4">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+            <h2>Reversing the Fourier transform</h2>
+            $$ \begin{align}
+            \mathbf{S}_i    & = \frac{1}{\sqrt{N}} \left( e^{i \mathbf{Q} \cdot \mathbf{r}_i} \mathbf{S}_{Q} e^{i \mathbf{-Q} \cdot \mathbf{r}_i} \mathbf{S}_{-Q} \right) \\
+            & = \frac{1}{\sqrt{N}} \left[ e^{i \mathbf{Q} \cdot \mathbf{r}_i} (\mathbf{u} + i\mathbf{v}) + e^{i \mathbf{-Q} \cdot \mathbf{r}_i} (\mathbf{u} - i\mathbf{v})\right] \\
+            & = -\frac{2}{\sqrt{N}} \left( \mathbf{u}\cos (\mathbf{Q} \cdot \mathbf{r}) - \mathbf{v}\sin (\mathbf{Q} \cdot \mathbf{r}) \right)
+            \end{align}$$
+            <p>Normalising $\mathbf{u}$ and $\mathbf{v}$ we get:</p>
+            $$\mathbf{S}_i = S\left( \mathbf{\hat{u}}\cos (\mathbf{Q} \cdot \mathbf{r}) - \mathbf{\hat{v}}\sin (\mathbf{Q} \cdot \mathbf{r}) \right)$$
+            <p>So:</p>
+            <ul>
+                <li>$\mathbf{\hat{u}} \perp \mathbf{\hat{v}}$</li>
+                <li>$\mathbf{\hat{u}}$ and $\mathbf{\hat{v}}$ are not fixed by minimising $\mathcal{H}$</li>
+                <li>Anisotropy would break the degeneracy</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="helicalSummary">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">The spiral ground state</div>
+        </div>
+        <content>
+            <h2>In spin-space</h2>
+            <p>Choosing the points $\mathbf{\hat{x}}=\mathbf{\hat{u}}$ and $\mathbf{\hat{y}}=-\mathbf{\hat{v}}$ we see:</p>
+            $$ \begin{align}
+                    S_i^x & = S\cos(\mathbf{Q} \cdot \mathbf{r}) \\
+                    S_i^y & = S\sin(\mathbf{Q} \cdot \mathbf{r}) \\
+                    S_i^z & = 0
+            \end{align}$$
+            <p>A <i>helical state</i> which is <i>coplanar</i> but not <i>colinear</i>.</p>
+            <ul>
+                <li>$\mathbf{\hat{u}}$ and $\mathbf{\hat{y}}$ can be arbitrarily orientated relative to $\mathbf{Q}$</li>
+                <li>$\mathbf{S}_i = C$ on any plane orthogonal to $\mathbf{Q}$</li>
+            </ul>
+            <p>We have proved <b>Luttinger-Tisza theory</b> </p>
+        </content>
+    </div>
+</section>
+
+
+<section class="quote color--midnight" id="defLTt">
+    <div class="grid-wrapper">
+        <div class="logo"></div>
+        <blockquote>
+            <p>
+                The classical ground state of a Heisenberg Hamiltonian on the Bravais lattice is always a single-Q spiral.
+            </p>
+            <hr>
+            <cite>Luttinger-Tisza theory</cite>
+        </blockquote>
+    </div>
+</section>
+
+<section class="blank color--radiant present" id="SemiQM" style="display: block;">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"></div>
+        </div>
+        <div class="content"><h1>Quantum mechanical treatment of spin waves</h1></div>
+    </div>
+</section>
+
+<section class="blank" id="starterQM">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Quantum mechanical treatment of spin waves</div>
+        </div>
+        <content>
+            <p>Important points to note:</p>
+            <ul>
+                <li>Excitations are quasiparticles: magnons
+                    <ul>
+                        <li>They are Bosons</li>
+                        <li>Obey commutator relations: $\left[ a, a^+ \right] = 1$</li>
+                        <li>Obey Bose-Einstein statistics: $n(\omega ) = \frac{1}{\exp (\hbar \omega / k_B T) - 1}$</li>
+                    </ul>
+                    <br>
+                </li>
+                <li>Equivalent to coupled quantum harmonic oscillators:
+                    <ul>
+                        <li>Zero point energy</li>
+                        <li>Reduction of magnetic order</li>
+                        <li>Quantum <i>order by disorder</i></li>
+                    </ul>
+                    <br>
+                </li>
+                <li>Strong magnon-magnon interaction in non-collinear magnets</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="rotCoOrd">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Rotating coordinate system</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <object data="images/RotCoOrd.svg" type="image/svg+xml" style="margin: auto; width: 100%; border: 3px solid green; display: block;">
+                        <img src="yourfallback.jpg" />
+                    </object>                    <div class="name">Rotating coordinate system</div>
+                    <div class="role">Rotating coordinate system in the lab frame</div>
+                </div>
+                <div id="details">
+            <p>We introduced the concept of the rotating coordinate system in the helical subsection. Choosing a suitable $\mathbf{\hat{u}}$ and $\mathbf{\hat{v}}$:<br></p>
+            $$\begin{align}
+                S_i^x & = S_i^\eta \\
+                S_i^y & = S_i^\mu \cos (\varphi_i ) + S_i^\xi \sin (\varphi_i)\\
+                S_i^z & = -S_i^\mu \sin (\varphi_i ) + S_i^\xi \cos (\varphi_i)
+            \end{align} $$
+            <p><br>Where the rotation angle:<br></p>
+            $$ \varphi_i = \mathbf{Q}\cdot\mathbf{r}_i $$
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="QM_ham">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Hamiltonian</div>
+        </div>
+        <content>
+            <h2>Heisenberg Hamiltonian on Bravais lattice:</h2>
+            $$ \mathcal{H} = \sum_{i,d} J(d) \mathbf{S}_i \cdot \mathbf{S}_{i+d}$$
+            <p>We derived this previously and after substitution and a bit of trigonometry:</p>
+            $$ \begin{align}
+                \mathcal{H} = & \sum_{i,j} J(\mathbf{d}) \left( S_i^\eta S_j^\eta + \sin (\mathbf{Q} \cdot \mathbf{d}_{i,j})(S_i^\mu S_j^\xi - S_i^\xi S_j^\eta \right) + \\
+                            & \cos(\mathbf{Q}\cdot \mathbf{d}_{i,j}\left( S_i^\mu S_j^\mu + S_i^\xi S_j^\xi\right)
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="ladderOperators">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Remembering ladder operators</div>
+        </div>
+        <content>
+            <p>Spin state with a small field along the $z$ axis:</p>
+            $$
+            \lvert n \rangle \equiv S, m = S -n
+            $$
+            <p>Ladder operators for a harmonic oscillator:</p>
+            $$ \begin{align}
+            a^+ \lvert n \rangle  & = \sqrt{n+1} \lvert n + 1 \rangle \\
+            a \lvert n \rangle    & = \sqrt{n} \lvert n -1 \rangle \\
+            \left[ a, a^+ \right] & = 1
+            \end{align}$$
+            <p>Ladder operators for spin:</p>
+            $$ \begin{align}
+            S^- \lvert n \rangle  & = \sqrt{2S}\sqrt{1 - \frac{n}{2S}}\sqrt{n+1} \lvert n + 1 \rangle \\
+            S^+ \lvert n \rangle  & = \sqrt{2S}\sqrt{1 - \frac{n - 1}{2S}}\sqrt{n} \lvert n -1 \rangle \\
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="quote color--midnight" id="SWApprox">
+    <div class="grid-wrapper">
+        <div class="logo"></div>
+        <blockquote>
+            <p>
+                Assuming $\langle n \rangle \ll S$ the coupled harmonic oscillator is a good model. The excited states of the harmonic oscillator are magnons.
+             </p>
+            <hr>
+            <cite>Spin wave approximation</cite>
+        </blockquote>
+    </div>
+</section>
+
+<section class="blank" id="HPTransform">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Remembering ladder operators</div>
+        </div>
+        <content>
+            <p>Ladder operators for spin:</p>
+            $$ \begin{align}
+            S^-   & = \sqrt{2S} a^+ \hat{f}  \\
+            S^+   & = \sqrt{2S} \hat{f} a
+            \end{align}$$
+            <p>Where:</p>
+            $$ \hat{f} = \sqrt{1 - \frac{n}{2S}} $$
+            <p>Applying the transormation, $S$ in the spin frame:</p>
+            $$ \begin{align}
+            S_i^\eta  & = \frac{1}{2}(S^+ + S^- ) = \sqrt{S/2}(a^+_i + a_i)  \\
+            S_i^\mu   & = -\frac{i}{2}(S^+ - S^- ) = \sqrt{S/2}(a^+_i - a_i) \\
+            S_i^\xi   & = S - n_i = S - a_i^+a_i
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="QuadraticForm1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Quadratic form</div>
+        </div>
+        <content>
+            <p>So:</p>
+            $$ S_i^\eta S_j^\eta = S/2 (a^+_i + a_i)(a^+_j + a_j) $$
+            <p>etc...</p>
+            <p>We have a hamiltonian of boson operators which can be expanded in powers of $1/S$ to obtain:</p>
+            $$
+            \mathcal{H} = E_0 + \mathcal{H}_1 + \mathcal{H}_2 + \mathcal{H}_3 + \mathcal{H}_4 ...
+            $$
+            <p>Where $E_0$ is the classical result which we derived from the spiral example:</p>
+            $$
+            E_0 = S^2 \sum_{i, \mathbf{d}} J(\mathbf{d})\cos (\mathbf{Q} \cdot \mathbf{d})
+            $$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="QuadraticForm2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Quadratic form</div>
+        </div>
+        <content>
+            <p>1 operator term:</p>
+            $$ \mathcal{H}_1 = S^{3/2} \sum_{i,j} \frac{i}{2} J(\mathbf{d}_{i,j}) \sin (\mathbf{Q} \cdot \mathbf{d}_{i,j})(a_i^+ - a_i + a_j - a_j^+) $$
+            <aside class="notes">
+                Actually 1st operator term vanishes if the spin state minimises E0
+            </aside>
+            <p>2 operator term:</p>
+            $$\begin{align}
+            \mathcal{H}_2  = S \sum_{i,j} \frac{1}{2} J(\mathbf{d}_{i,j}) &( (1 - \cos (\mathbf{Q} \cdot \mathbf{d}_{i,j}))(a_ia_j + a_ia_j) \\
+                          & + (1 + \cos (\mathbf{Q} \cdot \mathbf{d}_{i,j}))(a_ia_j^+ + a_i^+a_j) \\
+                          & - 2\cos (\mathbf{Q} \cdot \mathbf{d}_{i,j})(a_i^+a_i + a_j^+a_j) )
+            \end{align}$$
+            <aside class="notes">
+                Actually 1st operator term vanishes if the spin state minimises E0
+                <br>
+                The spin dynamics is contained in the 2 operator term
+            </aside>
+            <p>3 operator term:</p>
+            <ul>
+                <li>Non-zero in non-collinear structures</li>
+                <li>Can change the ground state</li>
+            </ul>
+            <p>4 operator term:</p>
+            <ul>
+                <li>Renormalizes the magnon dispersion</li>
+                <li>Gives finite magnon lifetime</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+
+<section class="blank" id="Diagonalization1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Diagonalization of the quadratic form</div>
+        </div>
+        <content>
+            <p>We have a mix of operators on the different sites and we need to separate them.</p>
+            <p>Bring on more Fourier transforms:</p>
+            $$\begin{align}
+                a_i = \frac{1}{\sqrt{N}}\sum_{k} a_k e^{i \mathbf{k}\cdot\mathbf{r}_i} & , a_i^+ =  \frac{1}{\sqrt{N}}\sum_{q} a_k^+ e^{-i \mathbf{k}\cdot\mathbf{r}_i}\\
+                a_k = \frac{1}{\sqrt{N}}\sum_{i} a_i e^{-i \mathbf{k}\cdot\mathbf{r}_i} & , a_k^+ =  \frac{1}{\sqrt{N}}\sum_{i} a_i^+ e^{i \mathbf{k}\cdot\mathbf{r}_i}
+            \end{align}$$
+            <p>Where the usual Boson commutator relations are obeyed.</p>
+            <p>After substitution:</p>
+            $$ \begin{align}
+                \mathcal{H}_2   & = \frac{S}{2} \sum_\mathbf{k} \left( J(\mathbf{k}) - \frac{J(\mathbf{k} + \mathbf{Q}) + J(\mathbf{k} - \mathbf{Q})}{2} \right) \left( a_\mathbf{k}a_\mathbf{-k} + a_\mathbf{k}^+a_\mathbf{-k}^+\right) \\
+                                & + \left( J(\mathbf{k}) + \frac{J(\mathbf{k} + \mathbf{Q}) + J(\mathbf{k} - \mathbf{Q})}{2} \right) \left( a_\mathbf{k}a_\mathbf{k}^+ + a_\mathbf{k}^+a_\mathbf{k}\right) - 4J(\mathbf{Q})a_\mathbf{k}^+a_\mathbf{k}
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="Diagonalization2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Diagonalization of the quadratic form</div>
+        </div>
+        <content>
+            <p>Luckily, $\mathcal{H}_2$ can now be written in matrix form:</p>
+            $$\mathcal{H}_2 = \sum_\mathbf{k} \mathbf{x}^\dagger H(\mathbf{k}) \mathbf{x} $$
+            <p>Where $\mathbf{x}$ is a vector of Boson operators:</p>
+            $$ \mathbf{x} = \begin{bmatrix} a_\mathbf{k} \\ a_\mathbf{k}^+\end{bmatrix}$$
+            <p>And the matrix of the Hamiltonian has the form:</p>
+            $$ H = \begin{bmatrix} A & B \\ B & A \end{bmatrix} $$
+            <br>
+            $$\begin{align}
+                A & = J(\mathbf{k}) + J(\mathbf{k} + \mathbf{Q})/2 + J(\mathbf{k} - \mathbf{Q})/2 - 2J(\mathbf{Q}) \\
+                B & = J(\mathbf{k}) - J(\mathbf{k} + \mathbf{Q})/2 - J(\mathbf{k} - \mathbf{Q})/2
+            \end{align}$$
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="Diagonalization3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Diagonalization of the quadratic form</div>
+        </div>
+        <content>
+            <p>In Bogoliubov method, we define new operator $b$ with the following transformation:
+            </p>
+            $$ \begin{align}
+                b   & = ua + va^+ \\
+                b^+ & = ua^+ +va
+            \end{align}$$
+            <p>The new operator has to fulfill the commutation relations:</p>
+            $$ \begin{align}
+            [b, b^+] & = 1 \\
+            u^2 + v^2 & = 1
+            \end{align}$$
+            <p>With the right parameter choice:</p>
+            $$
+            \mathcal{H}_2 = \sum_\mathbf{k} \omega_\mathbf{k} \left( b^+b + \frac{1}{2} \right)
+            $$
+            <p>And the spin wave dispersion:</p>
+            $$
+            \omega_\mathbf{k} = \sqrt{A^2 - B^2}
+            $$
+            <p>The above calculation is equivalent to solving the eigenvalue problem of $gH$, where $g = [x, x^\dagger]$ commutator matrix.</p>
+        </content>
+    </div>
+</section>
