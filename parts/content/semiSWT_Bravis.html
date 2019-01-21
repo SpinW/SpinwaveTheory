@@ -1,9 +1,9 @@
 <section class="subsection color--radiant" id="semiCBravishead">
     <div class="grid-wrapper">
         <div class="logo"></div>
-        <h1> Semiclassical spin wave theory on Bravais lattices</h1>
+        <h1>Semiclassical spin wave theory on Bravais lattices</h1>
         <div class="description">
-            <i>Here comes the pain</i> - Al Pacino in 'Carlitos Way'
+            <i>"Here comes the pain"</i> - Al Pacino in 'Carlitos Way'
         </div>
     </div>
 </section>
@@ -73,7 +73,7 @@
         </div>
         <content>
             <p>So $J(k)$ is real and even since $J(\mathbf{d})$ is real and even. Forcing $\mathbf{F}_k$ to respect the normalisation condition of $\mathbf{S}_i$:<br></p>
-            $$ S^2 = \mathbf{S}_i \cdot \mathbf{S}_i = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_\acute{k} e^{i (\mathbf{k} + \mathbf{\acute{k}})\cdot \mathbf{r}_i} = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_{-\acute{k}}0 e^{i (\mathbf{k} - \mathbf{\acute{k}})\cdot \mathbf{r}_i}$$
+            $$ S^2 = \mathbf{S}_i \cdot \mathbf{S}_i = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_\acute{k} e^{i (\mathbf{k} + \mathbf{\acute{k}})\cdot \mathbf{r}_i} = \frac{1}{N} \sum_{k,\acute{k}} \mathbf{F}_k \cdot \mathbf{F}_{-\acute{k}} e^{i (\mathbf{k} - \mathbf{\acute{k}})\cdot \mathbf{r}_i}$$
             <p>Let $\mathbf{Q}$ be a single wavevector which maximises $J(k)$. Minimising $\mathcal{H}$ to get the ground-state we have 2 cases:</p>
             <ul>
                 <li>$\mathbf{Q} = 0$: So $\mathbf{S}_i = N^{-\frac{1}{2}} \mathbf{S}_{\mathbf{Q} = 0}$ which gives us homogeneous spin polarisation or a <i>ferromagnet</i> as shown before.</li>
@@ -416,7 +416,7 @@
             <p>Luckily, $\mathcal{H}_2$ can now be written in matrix form:</p>
             $$\mathcal{H}_2 = \sum_\mathbf{k} \mathbf{x}^\dagger H(\mathbf{k}) \mathbf{x} $$
             <p>Where $\mathbf{x}$ is a vector of Boson operators:</p>
-            $$ \mathbf{x} = \begin{bmatrix} a_\mathbf{k} \\ a_\mathbf{k}^+\end{bmatrix}$$
+            $$ \mathbf{x} = \begin{bmatrix} a_\mathbf{k} \\ a_{-\mathbf{k}}^+\end{bmatrix}$$
             <p>And the matrix of the Hamiltonian has the form:</p>
             $$ H = \begin{bmatrix} A & B \\ B & A \end{bmatrix} $$
             <br>
@@ -455,6 +455,191 @@
             \omega_\mathbf{k} = \sqrt{A^2 - B^2}
             $$
             <p>The above calculation is equivalent to solving the eigenvalue problem of $gH$, where $g = [x, x^\dagger]$ commutator matrix.</p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="NSF1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Spin-spin correlation function</div>
+        </div>
+        <content>
+            <p>Now we have $\omega_\mathbf{k}$ and half the story. Remember for neutron scattering: </p>
+            <br>$$
+            \frac{d^2\sigma}{d\Omega dE} = C \cdot F^2(\mathbf{K}) \sum_{\alpha , \beta}(\delta_{\alpha , \beta} - \hat{k}_\alpha\hat{k}_\beta ) (gSg^T)^{\alpha , \beta} (\mathbf{k}, \omega)
+            $$
+            <p>With the correlation function:</p>
+            <br>$$
+            S^{\alpha \beta}(\mathbf{k},\omega) = \frac{1}{2\pi\hbar}\int dt e^{-i \omega t} \left< S^\alpha (\mathbf{k}, 0) S^\beta (-\mathbf{k}, t) \right>
+            $$
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="NSF2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Out-of-plane correlation function</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <object data="images/RotCoOrd.svg" type="image/svg+xml" style="margin: auto; width: 100%; border: 3px solid green; display: block;">
+                        <img src="yourfallback.jpg" />
+                    </object>
+                    <div class="name">Rotating coordinate system</div>
+                    <div class="role">Rotating coordinate system in the lab frame</div>
+                </div>
+                <div id="details">
+                    <p>Correlation function:</p>
+                    <br>$$\begin{align}
+                        S^{x,x}(t, \mathbf{k})  & = \frac{1}{N^2} \sum_{i,j} \left< S_i^x S_j^x(t) \right> e^{i \mathbf{k}\cdot \mathbf{d}_{i,j}} \\
+                                                & = \frac{S}{2} \sum_\mathbf{k} \left< a^+_{\mathbf{-k}} a^+_{\mathbf{k}}(t) + a_{\mathbf{-k}} a_{\mathbf{k}}(t) + a^+_{\mathbf{k}} a_{\mathbf{k}}(t) + a_{\mathbf{k}} a^+_{\mathbf{k}}(t) \right>
+                    \end{align} $$
+                    <br><p>Converting into $b$ and $b^+$ operators, taking the Fourier transform in time:</p>
+                    $$
+                    S^{xx}(\omega,\mathbf{k}) = S \frac{A_\mathbf{k} - B_\mathbf{k}}{\omega_\mathbf{k}} \cdot \delta (\omega - \omega_\mathbf{k}) \cdot (n_\omega + 1)
+                    $$
+                    <br><p>Using</p>
+                    <br>$$
+                    \left< b^+_\mathbf{k} b_\mathbf{k} (t) \right> = n_\omega e^{-i \omega_\mathbf{k} t}
+                    $$
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="NSF3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">In-plane correlation function</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <object data="images/RotCoOrd.svg" type="image/svg+xml" style="margin: auto; width: 100%; border: 3px solid green; display: block;">
+                        <img src="yourfallback.jpg" />
+                    </object>
+                    <div class="name">Rotating coordinate system</div>
+                    <div class="role">Rotating coordinate system in the lab frame</div>
+                </div>
+                <div id="details">
+                    <p>Correlation function:</p>
+                    <br>$$
+                    S^{y,y}(t)  = -\frac{S}{2} \sum_\mathbf{i,j} \cos (\mathbf{Q} \cdot \mathbf{d}_{i,j}) \left< a^+_{i} a^+_{j}(t) + a_{i} a_{j}(t) - a^+_{i} a_{j}(t) - a_{i} a^+_{j}(t) \right>
+                    $$
+                    <br><p>Converting into $b$ and $b^+$ operators, taking the Fourier transform in time. The $\cos (\mathbf{Q} \cdot \mathbf{d}_{i,j})$ brings in a $\pm \mathbf{Q}$ shift in reciprocal
+                    space:</p>
+                    $$
+                    S^{yy}(\omega,\mathbf{k}) = S^{zz}(\omega,\mathbf{k}) = S \frac{1}{4} \left( S^{\xi\xi} (\omega , \mathbf{k} - \mathbf{Q}) + S^{\xi\xi} (\omega , \mathbf{k} + \mathbf{Q}) \right)
+                    $$
+                    <br><p>Where the correlation function in the rotating frame:</p>
+                    <br>$$
+                    S^{\xi\xi} (\omega , \mathbf{k} ) = S \frac{A_\mathbf{k} + B_\mathbf{k}}{\omega_\mathbf{k}} \cdot \delta (\omega - \omega_\mathbf{k}) \cdot (n_\omega + 1)
+                    $$
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="blank color--radiant present" id="TRiAF" style="display: block;">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"></div>
+        </div>
+        <div class="content"><h1>Worked Example: Triangular lattice antiferromagnet</h1></div>
+    </div>
+</section>
+
+<section class="showit" id="triAF1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Triangular lattice antiferromagnet</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <img src="images/TriFM2.png" alt="Spins in a TriAF" style="display: block; margin-left: auto;margin-right: auto;width: 100%;">
+                    <div class="name">Spin configuration.</div>
+                    <div class="role">Spins in a triangular antiferromagnet.</div>
+                </div>
+                <div id="details">
+                    <p>There are 3 bond vectors given by:</p>
+                    <br>$$\begin{align}
+                    \mathbf{e}_1 & = (1, 0) \\
+                    \mathbf{e}_2 & = (-1/2, sqrt(3)/2) \\
+                    \mathbf{e}_3 & = (-1/2, -sqrt(3)/2)
+                    \end{align}$$
+                    <br><p>The exchange couplings are given by:</p>
+                    $$
+                    J(\mathbf{k}) = \sum_{i=1}^3 J\cos (\mathbf{k} \cdot \mathbf{e}_i )
+                    $$
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+<section class="showit" id="triAF2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Triangular lattice antiferromagnet</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <img src="images/TriAF.png" alt="Spins in a TriAF" style="display: block; margin-left: auto;margin-right: auto;width: 100%;">
+                    <div class="name">Ground State energy.</div>
+                    <div class="role">Energy manifold for a Tri AF.</div>
+                </div>
+                <div id="details">
+                    <p>The ground-state energy is given by:</p>
+                    <br>$$
+                    \omega_\mathbf{k} = \sqrt{A^2 - B^2} = \sqrt{(1-J(\mathbf{k}))(1 + 2J(\mathbf{k})}
+                    $$
+                    <br><p>Where $A$ and $B$ have been simplified for this case.</p>
+                    <br><p>The classical ground state is given by minimising $J(\mathbf{k}$. (Note, by notation in some books it's maximising).</p>
+                    $$
+                    \mathbf{Q} = (1/3, 1/3)
+                    $$
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+<section class="showit" id="triAF3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Triangular lattice antiferromagnet</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <img src="images/TriAF_spec.png" alt="Spins in a TriAF" style="display: block; margin-left: auto;margin-right: auto;width: 100%;">
+                    <div class="name">Ground State energy.</div>
+                    <div class="role">Energy manifold for a Tri AF.</div>
+                </div>
+                <div id="details">
+                    <p>By looking at the definition of $A$ and $B$ we can see that there are 3 spinwave modes.</p>
+                    <p>The three spin wave modes are: $S(\mathbf{k},\omega)$ and $S(\mathbf{k}\pm\mathbf{Q},\omega)$ due to the incommensurate ordering wave vector. </p>
+                    <p>Using SpinW we can plot the spin polarisation of each mode</p><br>
+                    <ul>
+                    <li>In red is a phason mode polarised along the $c^*$-axis.</li>
+                    <li>The blue Goldstone modes have polarisation in the easy-plane.</li>
+                    </ul>
+                    <br>
+                    <p>Goldstone modes appear due to spontaneous breaking of continuous symmetry.</p>
+                </div>
+            </div>
         </content>
     </div>
 </section>

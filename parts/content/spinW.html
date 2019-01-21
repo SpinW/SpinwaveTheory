@@ -16,8 +16,10 @@
         </div>
         <content>
             <h2>General spin Hamiltonian:</h2>
-                $$ H = \sum_{ni,nj} \mathbf{S}^T_{ni}J_{ni,mj}\mathbf{S}_{mj} + \sum_{ni} \mathbf{S}^T_{ni}A_{ni}\mathbf{S}_ni + \mu_B\mathbf{H}^T\sum_{ni}g_{ni}\mathbf{S}_{ni}$$
-                <p><br>With the anisotropic and antisymmetric (Dzyaloshinskii-Moriya) exchange
+            $$
+            H = \sum_{mi,nj} \mathbf{S}_{mi}^T \cdot J_{mi} \cdot \mathbf{S}_{nj} + \sum_{mi}\mathbf{S}_{mi}^T \cdot A_i \cdot \mathbf{S}_{mi} + \mu_B\mathbf{H}^T\sum_{mi}g_i\mathbf{S}_{mi}
+            $$
+            <p><br>With the anisotropic and antisymmetric (Dzyaloshinskii-Moriya) exchange
                     interactions:<br></p>
 
                 $$J_H = \begin{bmatrix} J & 0 & 0 \\ 0 & J & 0 \\ 0 & 0 & J \end{bmatrix} ; J_{DM} = \begin{bmatrix} 0 & D^x & -D^y \\ -D^z & 0 & D^x \\ D^y & -D^x & 0 \end{bmatrix}$$
